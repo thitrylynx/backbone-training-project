@@ -1,0 +1,35 @@
+{
+  "name": "backbone-training-project",
+  "version": "1.0.0",
+  "description": "training project",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^4.24.0"
+  },
+  "devDependencies": {
+    "backbone": "^1.3.3",
+    "css-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "build": "webpack -p",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thitrylynx/backbone-training-project.git"
+  },
+  "author": "Vyacheslav K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thitrylynx/backbone-training-project/issues"
+  },
+  "homepage": "https://github.com/thitrylynx/backbone-training-project#readme"
+}
