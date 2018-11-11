@@ -1,1 +1,2 @@
-console.log('This is rainbow.js')
+let test = "1234";
+console.log('test', test)
