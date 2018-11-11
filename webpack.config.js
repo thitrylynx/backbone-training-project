@@ -40,3 +40,4 @@ module.exports = {
     new ExtractTextPlugin('style.css')
   ]
 };
+
