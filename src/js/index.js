@@ -5,7 +5,7 @@ $(function() {
 		Collections: {},
 		Views:{}	
 	};
- 
+
 	// шаблон
 	window.template = function(id) {
 		return _.template( $('#' + id).html() );
@@ -65,10 +65,11 @@ $(function() {
             this.collection.add(newItem);
 		}
 	});
- 
+
 	window.itemsCollection = new App.Collections.Item();
- 
 	var itemsView = new App.Views.Items({ collection: itemsCollection});
 	$('.items').html(itemsView.render().el);
 	var addItemsView = new App.Views.AddItem({ collection: itemsCollection });
 });
+
+
