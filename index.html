@@ -6,7 +6,7 @@
     </head>
     <body>
             <div class="wrapper">
-                    <form class="search-form" method="post">
+                    <form class="search-form" id="addItem">
                         <h1 class="search-form__title">Поиск товаров по артикулам</h1>
                         <p class="search-form__desc">Введите артикулы через пробел или с новой строки, например: 123456 123415 125252</p>
                         <textarea class="search-form__textarea" name="text"></textarea>
@@ -15,14 +15,28 @@
                     </form>
                 </div>
 
-                <script id="person-id" type="text/template">
-                    <strong><%= name %></strong> (<%= age %>) - <%= job %>
-                </script>
+                <div class="items">
+                    <script type="text/template" id="itemTemplate"></script>
+                </div>
+
+                <!-- Тестовая задача -->
+                <h1>Список задач</h1>
+                <form action="" id="addTask">
+                    <input type="text" placeholder="Ваша новая задача">
+                    <input type="submit" value="Добавить задачу">
+                </form>
+                <div class="tasks">
+                    <script type="text/template" id="taskTemplate">
+                        <span><%= title %></span> <button class="edit">Edit</button> <button class="delete">Delete</button>
+                    </script>
+                </div>
 
                 <script type="text/javascript" src="src/js/underscore-min.js"></script>
                 <script type="text/javascript" src="src/js/jquery-3.3.1.min.js"></script>
                 <script type="text/javascript" src="src/js/backbone-min.js"></script>
+                <script type="text/javascript" src="src/js/backend.js"></script>
                 <script type="text/javascript" src="src/js/index.js"></script>
+                <script type="text/javascript" src="src/js/testTask.js"></script>
     </body>
 </html>
 
