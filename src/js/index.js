@@ -1,5 +1,7 @@
-import ItemView from "./item-view";
+import _ from 'lodash';
+import * as jQuery from 'jquery';
 import Backbone from "backbone";
+import ItemView from "./item-view";
 
 var m = new Backbone.Collection();
 m.url = () => {
@@ -26,18 +28,7 @@ var a = new ItemView();
 //     // Модель товара
 // 	App.Models.Item = Backbone.Model.extend({})
 
-//     // Отображение товара
-// 	App.Views.Item = Backbone.View.extend({
-// 		initialize: function () {
-// 		},
-// 		tagName: 'div',
-// 		template: template('itemTemplate'),
-// 		render: function () {
-// 			var template = this.template(this.model.toJSON());
-// 			this.$el.html( template );
-// 			return this;
-// 		}
-//     });
+
 
 //     // Колекция товаров
 // 	App.Collections.Item = Backbone.Collection.extend({
