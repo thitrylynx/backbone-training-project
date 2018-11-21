@@ -1,6 +1,3 @@
-import _ from 'lodash';
-import * as jQuery from 'jquery';
-import Backbone from "backbone";
 import ItemView from "./item-view";
 
 var m = new Backbone.Collection();
@@ -10,7 +7,7 @@ m.url = () => {
 m.listenTo(m, "sync", console.log);
 m.fetch();
 console.log(m);
-var a = new ItemView();
+window.a = new ItemView();
 
 // `$(function() {
 // 	// пространство имён
@@ -27,8 +24,6 @@ var a = new ItemView();
 
 //     // Модель товара
 // 	App.Models.Item = Backbone.Model.extend({})
-
-
 
 //     // Колекция товаров
 // 	App.Collections.Item = Backbone.Collection.extend({
