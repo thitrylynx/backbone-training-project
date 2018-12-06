@@ -3,16 +3,18 @@ import Item from "./item";
 
 class itemsCollection extends Backbone.Collection {
   constructor(options) {
-    super(options)
-    this.model = Item
+    super(options);
+    this.model = Item;
   }
-  url () {
-    return "https://www.sima-land.ru/api/v3/item/?sid=123456";
+  url(param) {
+    return "https://www.sima-land.ru/api/v3/item/?sid=123456,1005002";
+  }
+  parse(response) {
+    return response.items;
   }
 }
 export default itemsCollection;
 
-window.m = new itemsCollection();
+console.log(123);
 
-window.m.fetch();
-console.log(window.m);
+new FormView();
