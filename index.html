@@ -14,15 +14,18 @@
             <textarea class="search-form__textarea" name="text"></textarea>
             <p class="search-form__remark">Не более 1000 артикулов за раз</p>
             <div class="search-form__btn">Искать</div>
+
+            <div class="result"></div>
+            <script id="item-template" type="text/template">
+                <ul>
+                    <li><%=name%></li>
+                </ul>
+            </script>
         </form>
     </div>
 
     <div class="items">
-        <script id="item" type="text/template">
-            <ul>
-                <li><%=name%></li>
-            </ul>
-        </script>
+
     </div>
     <script type="text/javascript" src="dist/js/index.js"></script>
 </body>

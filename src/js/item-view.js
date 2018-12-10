@@ -7,13 +7,15 @@ class ItemView extends Backbone.View {
     super(props);
   }
   initialize() {
-    this.render()
+    this.render();
   }
-  render(){
-    console.log('name thi', this)
-    const tempalteEl = template(document.getElementById('item').innerHTML)
+  render() {
+    console.log("name thi", this);
+    const tempalteEl = template(
+      document.getElementById("item-template").innerHTML
+    );
     const result = tempalteEl(this.item.itemName);
-    document.write( result );
+    document.write(result);
   }
 }
 

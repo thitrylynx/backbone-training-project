@@ -3,7 +3,7 @@ import Item from "./item";
 class itemsCollection extends Backbone.Collection {
   constructor(options) {
     super(options);
-    this.model = Item;
+    // this.model = Item;
   }
 
   parse(response) {
@@ -11,5 +11,3 @@ class itemsCollection extends Backbone.Collection {
   }
 }
 export default itemsCollection;
-
-
