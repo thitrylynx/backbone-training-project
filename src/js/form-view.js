@@ -1,7 +1,8 @@
-import { isEmpty, template } from "lodash";
+import { isEmpty } from "lodash";
 import { $, jQuery } from "jquery";
 import Backbone from "backbone";
 import ItemsCollection from "./items-collection.js";
+import ItemsView from "./items-view.js";
 
 class FormView extends Backbone.View {
   constructor() {
@@ -9,21 +10,21 @@ class FormView extends Backbone.View {
       events: {
         "click .search-form__btn": "searchRequest"
       },
-      el: "#addItem"
+      el: ".wrapper"
     });
   }
 
   initialize() {
-    this.collection = new ItemsCollection();
-    this.resultBlock = this.$(".result");
-    this.template = template(this.$("#item-template").html());
+    this.collection = new ItemsCollection(); // создаем коллекцию
+    this.itemsView = new ItemsView(); // создаем вью
 
+    // слушатель - отрисовывает элемент при успешном ответе 
     this.listenTo(this.collection, "sync", this.render);
   }
 
   render(collection) {
-    this.resultBlock.html(this.template({ name: "test" }));
-    console.log(collection.toJSON());
+    // отправить коллеккцию во вью
+    this.itemsView.render(collection)
   }
 
   searchRequest(e) {
@@ -44,4 +45,3 @@ class FormView extends Backbone.View {
 
 export default FormView;
 
-// вью items, доработать шаблон,  пренести отрисовку,
