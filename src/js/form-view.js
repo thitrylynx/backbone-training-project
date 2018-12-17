@@ -18,13 +18,13 @@ class FormView extends Backbone.View {
     this.collection = new ItemsCollection(); // создаем коллекцию
     this.itemsView = new ItemsView(); // создаем вью
 
-    // слушатель - отрисовывает элемент при успешном ответе 
+    // слушатель - отрисовывает элемент при успешном ответе
     this.listenTo(this.collection, "sync", this.render);
   }
 
   render(collection) {
     // отправить коллеккцию во вью
-    this.itemsView.render(collection)
+    this.itemsView.render(collection);
   }
 
   searchRequest(e) {
@@ -37,6 +37,8 @@ class FormView extends Backbone.View {
 
     console.log("items", items);
     if (items) {
+      // @TODO перенести в коллекцию, добавить функ. фетч айтемс (Ппринимает айтемс), юрл парсер (строит ссылку).
+      // @TODO Добавить шаблон (скрытие html/шаблон) результата поиска и найденных товаров.
       this.collection.url = `https://www.sima-land.ru/api/v3/item/?sid=${items}`;
       this.collection.fetch();
     }
@@ -44,4 +46,3 @@ class FormView extends Backbone.View {
 }
 
 export default FormView;
-
