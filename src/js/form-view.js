@@ -1,4 +1,3 @@
-import { isEmpty } from "lodash";
 import { $, jQuery } from "jquery";
 import Backbone from "backbone";
 import ItemsCollection from "./items-collection.js";
@@ -29,18 +28,9 @@ class FormView extends Backbone.View {
 
   searchRequest(e) {
     const inputValue = this.$(".search-form__textarea").val();
-    const re = /[ ,]+/;
-    const items = inputValue
-      .split(re)
-      .filter(item => !isNaN(item) && !isEmpty(item))
-      .join(",");
-
-    console.log("items", items);
-    if (items) {
-      // @TODO перенести в коллекцию, добавить функ. фетч айтемс (Ппринимает айтемс), юрл парсер (строит ссылку).
-      // @TODO Добавить шаблон (скрытие html/шаблон) результата поиска и найденных товаров.
-      this.collection.url = `https://www.sima-land.ru/api/v3/item/?sid=${items}`;
-      this.collection.fetch();
+    if(inputValue) {
+      this.collection.fetchItems(inputValue)
+      this.$(".search-form").addClass( "hidden")
     }
   }
 }

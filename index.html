@@ -15,7 +15,29 @@
             <p class="search-form__remark">Не более 1000 артикулов за раз</p>
             <span class="search-form__btn">Искать</span>
         </form>
+        <div class"search-result"></div>
         <div class="items"></div>
+
+        <!-- Шаблон результата поиска -->
+        <!-- <script id="search-result" type="text/template">
+            <div>
+                <ul>
+                    <% items.forEach(function(item) { %>
+                        <li>
+                            <h2>Поиск товаров по артикулам</h2>
+                            <p>Результат</p>
+                            <div>
+                                <p>Артикул: </p>
+                                <p> <a>Подробнее</a></p>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+                <button>Искать еще</button>
+            </div>
+        </script> -->
+
+        <!-- Шаблон карточки товара -->
         <script id="item-template" type="text/template">
             <ul>
                 <% items.forEach(function(item) { %>
