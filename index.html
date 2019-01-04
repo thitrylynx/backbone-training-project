@@ -8,34 +8,34 @@
 
 <body>
     <div class="wrapper">
-        <form class="search-form" id="addItem">
-            <h1 class="search-form__title">Поиск товаров по артикулам</h1>
+        <form class="inner search-form--js" id="addItem">
+            <h2 class="title">Поиск товаров по артикулам</h2>
             <p class="search-form__desc">Введите артикулы через пробел или с новой строки, например: 123456 123415 125252</p>
             <textarea class="search-form__textarea" name="text"></textarea>
             <p class="search-form__remark">Не более 1000 артикулов за раз</p>
-            <span class="search-form__btn">Искать</span>
+            <span class="search-form__btn btn">Искать</span>
         </form>
         <div class"search-result"></div>
         <div class="items"></div>
 
         <!-- Шаблон результата поиска -->
-        <!-- <script id="search-result" type="text/template">
-            <div>
+        <script id="search-result" type="text/template">
+            <div class="inner search-result--js">
                 <ul>
+                    <h2 class="title">Поиск товаров по артикулам</h2>
+                    <p>Результат</p>
                     <% items.forEach(function(item) { %>
                         <li>
-                            <h2>Поиск товаров по артикулам</h2>
-                            <p>Результат</p>
                             <div>
-                                <p>Артикул: </p>
-                                <p> <a>Подробнее</a></p>
+                                <p>Артикул: <%- item.sid %></p>
+                                <p><%- item.name %> <a href="#">Подробнее</a></p>
                             </div>
                         </li>
                     <% }); %>
                 </ul>
-                <button>Искать еще</button>
+                <span class="search-form__btn-more btn">Искать еще</span>
             </div>
-        </script> -->
+        </script>
 
         <!-- Шаблон карточки товара -->
         <script id="item-template" type="text/template">

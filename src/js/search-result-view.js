@@ -2,28 +2,28 @@ import { template } from "lodash";
 import { $, jQuery } from "jquery";
 import Backbone from "backbone";
 
-class ItemsView extends Backbone.View {
+class SearchResultView extends Backbone.View {
   constructor() {
-   super({
+    super({
+      events: {
+        "click .search-form__btn-more": "searchMore"
+      },
       el: ".wrapper"
     });
   }
   initialize() {
     this.itemsBlock = this.$(".items");
-    this.itemTemplate = template(this.$("#item-template").html());
     this.searchResultTemplate = template(this.$("#search-result").html())
   }
   render(collection) {
     const items = collection.toJSON()
-
+    console.log(items)
     this.itemsBlock.html(this.searchResultTemplate({ items: items }));
-
-    // this.itemsBlock.html(this.itemTemplate({ items: items }));
   }
-  showItems(collection) {
-
-  }  
+  searchMore() {
+    this.$(".search-result--js").addClass( "hidden")
+    this.$(".search-form--js").removeClass( "hidden")
+  }
 }
 
-export default ItemsView;
-
+export default SearchResultView;

@@ -2,6 +2,7 @@ import { $, jQuery } from "jquery";
 import Backbone from "backbone";
 import ItemsCollection from "./items-collection.js";
 import ItemsView from "./items-view.js";
+import SearchResultView from "./search-result-view.js";
 
 class FormView extends Backbone.View {
   constructor() {
@@ -15,7 +16,8 @@ class FormView extends Backbone.View {
 
   initialize() {
     this.collection = new ItemsCollection(); // создаем коллекцию
-    this.itemsView = new ItemsView(); // создаем вью
+    this.itemsView = new ItemsView(); // создаем вью (карточка товара)
+    this.searchResultView = new SearchResultView(); // создаем вью (результат поиска)
 
     // слушатель - отрисовывает элемент при успешном ответе
     this.listenTo(this.collection, "sync", this.render);
@@ -23,14 +25,15 @@ class FormView extends Backbone.View {
 
   render(collection) {
     // отправить коллеккцию во вью
-    this.itemsView.render(collection);
+    this.searchResultView.render(collection);
+    // this.itemsView.render(collection);
   }
 
   searchRequest(e) {
     const inputValue = this.$(".search-form__textarea").val();
     if(inputValue) {
       this.collection.fetchItems(inputValue)
-      this.$(".search-form").addClass( "hidden")
+      this.$(".search-form--js").addClass( "hidden")
     }
   }
 }
